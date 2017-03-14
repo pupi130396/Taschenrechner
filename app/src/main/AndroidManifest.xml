@@ -11,7 +11,9 @@
         android:theme="@style/AppTheme">
 
         <activity android:name=".activityname">
-
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
     </application>
