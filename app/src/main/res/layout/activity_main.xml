@@ -26,7 +26,7 @@
                 android:layout_marginTop="122dp"
                 android:ems="10"
                 android:hint="Dividend"
-                android:inputType="number"
+                android:inputType="numberDecimal"
                 android:singleLine="false"
                 android:textAlignment="center" />
 
@@ -39,7 +39,7 @@
                 android:layout_marginTop="16dp"
                 android:ems="10"
                 android:hint="Teiler"
-                android:inputType="number"
+                android:inputType="numberDecimal"
                 android:textAlignment="center" />
 
         </RelativeLayout>

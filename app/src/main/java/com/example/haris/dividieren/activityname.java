@@ -1,12 +1,14 @@
 package com.example.haris.dividieren;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.PopupWindow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * Created by Haris on 10.03.2017.
@@ -28,19 +30,30 @@ public class activityname extends Activity {
     TextView ergebnis;
     double div, teil, erg;
     Button berechne;
+    String text = "Bitte Werte eingeben!";
+    int duration = Toast.LENGTH_LONG;
 
 
 
     public void rechnen(View a){
 
-        if(!dividend.getText().equals("") && !teiler.getText().equals("")) {
-
+        try{
             div = Double.parseDouble(dividend.getText().toString());
             teil = Double.parseDouble(teiler.getText().toString());
             erg = div / teil;
-            ergebnis.setText("" + erg);
+        ergebnis.setText("" + erg);
+            View view = this.getCurrentFocus();
+            if (view != null) {
+                InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(view.getWindowToken(), 0); }
+        }
+        catch(Exception e) {
+            Toast.makeText(getApplicationContext(), "Bitte Werte eingeben", duration).show();
         }
 
-    };
+    }
+
+
+    ;
 
 }
